@@ -2,15 +2,10 @@ FROM rallyforge/rally:0.8.1
 MAINTAINER <obutenko@mirantis.com>
 
 WORKDIR /var/lib
-# We need to switch to the 'root' user to avoid permission issues.
 USER root
 RUN git clone https://git.openstack.org/openstack/tempest -b 14.0.0 && \
     pip install tempest==14.0.0
-
-WORKDIR /home/rally
-# Switch to the 'rally' user back.
-USER rally
-
+WORKDIR /home/root
 # NOTE: Before building a docker image you can create own setup_tempest.sh
 #       script for setting up Tempest and use it instead of the default script.
 #       In order to make the default script work correctly, you have to create
@@ -34,6 +29,5 @@ USER rally
 #       export OS_PROJECT_DOMAIN_NAME='Default'
 #       export OS_USER_DOMAIN_NAME='Default'
 #       export OS_IDENTITY_API_VERSION='3'
-
 COPY setup_tempest.sh /usr/bin/setup-tempest
-ADD options.conf /home/rally/
+ADD options.conf /home/root/
