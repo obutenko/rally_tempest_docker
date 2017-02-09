@@ -25,4 +25,4 @@ USER rally
 #       export OS_REGION_NAME='RegionOne'
 #       export OS_ENDPOINT_TYPE='internalURL'
 COPY setup_tempest.sh /usr/bin/setup-tempest
-COPY options.conf /home/rally/options.conf
+COPY options.conf /home/rally/
