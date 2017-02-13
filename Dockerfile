@@ -5,7 +5,10 @@ WORKDIR /var/lib
 USER root
 RUN git clone https://git.openstack.org/openstack/tempest -b 14.0.0 && \
     pip install tempest==14.0.0
-WORKDIR /home/root
+    
+WORKDIR /home/rally
+# Switch to the 'rally' user back.
+USER rally
 # NOTE: Before building a docker image you can create own setup_tempest.sh
 #       script for setting up Tempest and use it instead of the default script.
 #       In order to make the default script work correctly, you have to create
@@ -30,4 +33,4 @@ WORKDIR /home/root
 #       export OS_USER_DOMAIN_NAME='Default'
 #       export OS_IDENTITY_API_VERSION='3'
 COPY setup_tempest.sh /usr/bin/setup-tempest
-COPY options.conf /home/root/options.conf
+COPY options.conf /root/options.conf
