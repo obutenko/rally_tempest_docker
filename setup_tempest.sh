@@ -1,6 +1,6 @@
 #!/bin/bash -xe
 
-source /home/root/openrc
+source /home/root/keystonercv3
 
 rally-manage db recreate
 rally deployment create --fromenv --name=tempest

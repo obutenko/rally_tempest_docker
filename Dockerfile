@@ -9,8 +9,8 @@ WORKDIR /home/root
 # NOTE: Before building a docker image you can create own setup_tempest.sh
 #       script for setting up Tempest and use it instead of the default script.
 #       In order to make the default script work correctly, you have to create
-#       an openrc file in the docker container before executing the setup-tempest
-#       command. An example of the openrc file:
+#       an keystonercv3 file in the docker container before executing the setup-tempest
+#       command. An example of the keystonercv3 file:
 #
 #       export OS_TENANT_NAME='admin'
 #       export OS_PROJECT_NAME='admin'
@@ -30,4 +30,4 @@ WORKDIR /home/root
 #       export OS_USER_DOMAIN_NAME='Default'
 #       export OS_IDENTITY_API_VERSION='3'
 COPY setup_tempest.sh /usr/bin/setup-tempest
-ADD options.conf /home/root/
+COPY options.conf /home/root/options.conf
