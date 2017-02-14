@@ -33,4 +33,4 @@ USER rally
 #       export OS_USER_DOMAIN_NAME='Default'
 #       export OS_IDENTITY_API_VERSION='3'
 COPY setup_tempest.sh /usr/bin/setup-tempest
-COPY options.conf /root/options.conf
+COPY options.conf /var/lib/extra_options.conf
