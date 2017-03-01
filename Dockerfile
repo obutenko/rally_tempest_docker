@@ -12,4 +12,4 @@ COPY skip_lists /var/lib/skip_lists
 COPY tempest_conf /var/lib/tempest_conf
 COPY run_tempest.sh /usr/bin/run-tempest
 
-ENTRYPOINT [ "run-tempest", "$tempest_conf", "$skip-list" ]
+ENTRYPOINT ["run-tempest"]
