@@ -33,6 +33,6 @@ USER rally
 #       export OS_USER_DOMAIN_NAME='Default'
 #       export OS_IDENTITY_API_VERSION='3'
 COPY run_tempest.sh /usr/bin/run-tempest
-COPY options.conf /var/lib/extra_options.conf
-COPY skip_list /var/lib/skip_list
+COPY options.conf /var/lib/extra-options.conf
+COPY skip_list /var/lib/skip-list
 ENTRYPOINT run-tempest
