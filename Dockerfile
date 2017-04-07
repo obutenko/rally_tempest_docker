@@ -1,10 +1,10 @@
-FROM rallyforge/rally:0.8.1
+FROM rallyforge/rally:0.9.0
 MAINTAINER Oleksii Butenko <obutenko@mirantis.com>
 
 WORKDIR /var/lib
 USER root
-RUN git clone https://git.openstack.org/openstack/tempest -b 14.0.0 && \
-    pip install tempest==14.0.0
+RUN git clone https://git.openstack.org/openstack/tempest -b 15.0.0 && \
+    pip install tempest==15.0.0
     
 WORKDIR /home/rally
 
